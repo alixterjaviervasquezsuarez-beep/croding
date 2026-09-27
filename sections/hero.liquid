@@ -11,28 +11,30 @@
       <div class="hero-content">
         <div class="hero-pill">
           <span class="hero-pill-icon">{% render 'icon', name: 'sparkles' %}</span>
-          <span class="hero-pill-text">{{ section.settings.pill_text | default: 'hero.pill' | t }}</span>
+          <span class="hero-pill-text">
+            {% if section.settings.pill_text != blank %}{{ section.settings.pill_text }}{% else %}{{ 'hero.pill' | t }}{% endif %}
+          </span>
         </div>
 
         <h1 class="hero-title">
-          {{ section.settings.heading_line1 | default: 'hero.heading_line1' | t }}<br>
-          <span class="hero-title-highlight">{{ section.settings.heading_line2 | default: 'hero.heading_line2' | t }}</span>
+          {% if section.settings.heading_line1 != blank %}{{ section.settings.heading_line1 }}{% else %}{{ 'hero.heading_line1' | t }}{% endif %}<br>
+          <span class="hero-title-highlight">{% if section.settings.heading_line2 != blank %}{{ section.settings.heading_line2 }}{% else %}{{ 'hero.heading_line2' | t }}{% endif %}</span>
         </h1>
 
         <p class="hero-description">
-          {{ section.settings.description | default: 'hero.description' | t }}
+          {% if section.settings.description != blank %}{{ section.settings.description }}{% else %}{{ 'hero.description' | t }}{% endif %}
         </p>
 
         <div class="hero-buttons">
           <a href="#comprar" class="hero-btn-primary">
-            {{ section.settings.cta_primary | default: 'hero.cta_primary' | t }}
+            {% if section.settings.cta_primary != blank %}{{ section.settings.cta_primary }}{% else %}{{ 'hero.cta_primary' | t }}{% endif %}
             {% render 'icon', name: 'arrow-right' %}
           </a>
           <a href="#tecnologia" class="hero-btn-secondary">
             <div class="hero-play-icon">
               {% render 'icon', name: 'play' %}
             </div>
-            {{ section.settings.cta_secondary | default: 'hero.cta_secondary' | t }}
+            {% if section.settings.cta_secondary != blank %}{{ section.settings.cta_secondary }}{% else %}{{ 'hero.cta_secondary' | t }}{% endif %}
           </a>
         </div>
 
