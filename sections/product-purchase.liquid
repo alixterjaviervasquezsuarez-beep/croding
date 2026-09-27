@@ -116,7 +116,60 @@
         </div>
       </div>
     {% else %}
-      <p style="text-align:center;color:#6b7280;padding:4rem 0;">Select a product in the Theme Editor to display the purchase section.</p>
+      {%- comment -%} Fallback hardcoded if no product is selected in Theme Editor {%- endcomment -%}
+      <div class="shop-card">
+        <div class="shop-grid">
+          <div class="shop-image-column">
+            <div class="shop-image-wrapper">
+              <span class="shop-badge-launch">{{ 'general.launch' | t }}</span>
+              <img src="{{ 'producto.jpeg' | asset_url }}" alt="SmartClothes" class="shop-image" width="800" height="800" loading="lazy">
+            </div>
+            <div class="shop-image-meta">
+              <span class="shop-color-info">
+                <span class="shop-color-label">{{ 'general.color' | t }}:</span>
+                Blanco Nórdico & Tapa Carbón
+              </span>
+              <span class="shop-stock-info">
+                <span class="shop-stock-dot"></span>
+                En stock (14 unidades restantes)
+              </span>
+            </div>
+          </div>
+          <div class="shop-details-column">
+            <h3 class="shop-product-title">Cesto Inteligente SmartClothes</h3>
+            <p class="shop-product-desc">Sistema autónomo dual para clasificación rápida y ordenada.</p>
+            <div class="shop-price-container">
+              <span class="shop-price-current">S/ 499.00</span>
+              <span class="shop-price-old">S/ 599.00</span>
+              <span class="shop-price-saving">Ahorras S/ 100.00</span>
+            </div>
+            <div class="shop-quantity-section">
+              <span class="shop-quantity-label">{{ 'general.quantity' | t }}</span>
+              <div class="shop-quantity-controls">
+                <button type="button">{% render 'icon', name: 'minus' %}</button>
+                <span>1</span>
+                <button type="button">{% render 'icon', name: 'plus' %}</button>
+              </div>
+            </div>
+            <div class="shop-buttons">
+              <button class="shop-add-btn">
+                <span class="shop-add-btn-icon">{% render 'icon', name: 'shopping-bag' %}</span>
+                <span class="shop-add-btn-text">{{ 'general.add_to_cart' | t }}</span>
+                <span class="shop-add-btn-price">· S/ 499.00</span>
+              </button>
+            </div>
+            <div class="shop-benefits">
+              <div class="shop-benefit-item"><span class="shop-benefit-icon">{% render 'icon', name: 'check' %}</span>{{ 'general.secure_shipping' | t }}</div>
+              <div class="shop-benefit-item"><span class="shop-benefit-icon">{% render 'icon', name: 'check' %}</span>{{ 'general.warranty_included' | t }}</div>
+              <div class="shop-benefit-item"><span class="shop-benefit-icon">{% render 'icon', name: 'check' %}</span>{{ 'general.purchase_protection' | t }}</div>
+            </div>
+            <div class="shop-shipping-alert">
+              <span class="shop-shipping-icon">{% render 'icon', name: 'clock' %}</span>
+              <p>{{ 'general.delivery_time' | t }} <strong>{{ 'general.business_days' | t }}</strong> {{ 'general.with_tracking' | t }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     {% endif %}
 
   </div>
