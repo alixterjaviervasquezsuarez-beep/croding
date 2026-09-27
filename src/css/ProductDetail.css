@@ -1,0 +1,170 @@
+@reference "tailwindcss";
+
+/* 
+==============================================
+   PRODUCT DETAIL PAGE (PDP)
+============================================== 
+*/
+
+.pdp-container {
+  @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-[80px] bg-white min-h-screen;
+}
+
+/* Breadcrumbs */
+.pdp-header {
+  @apply flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 text-sm;
+}
+.pdp-breadcrumbs {
+  @apply text-gray-500;
+}
+.pdp-breadcrumbs a {
+  @apply hover:text-gray-900 transition-colors;
+}
+.pdp-top-tags {
+  @apply flex items-center gap-2;
+}
+.pdp-tag {
+  @apply text-gray-600 text-xs font-bold tracking-[0.1em] uppercase;
+}
+.pdp-tag-dot {
+  @apply text-gray-300;
+}
+
+/* Grid */
+.pdp-grid {
+  @apply grid lg:grid-cols-2 gap-12 lg:gap-16 items-start;
+}
+
+/* Imagen Principal */
+.pdp-main-image-container {
+  @apply relative w-full aspect-square md:aspect-[4/5] bg-gray-50 rounded-[1.5rem] overflow-hidden mb-6 border border-gray-200/80 shadow-sm;
+}
+.pdp-image-tags {
+  @apply absolute top-4 left-4 z-10 flex flex-wrap gap-2;
+}
+.pdp-image-tag {
+  @apply px-3 py-1.5 rounded-md text-[10px] md:text-xs font-extrabold shadow-sm;
+}
+.pdp-image-tag.glass {
+  @apply bg-white/80 backdrop-blur-md text-gray-800 border border-white/50;
+}
+.pdp-image-tag.dark {
+  @apply bg-[#9E8D80] text-white; /* Un tono café/gris similar a la captura */
+}
+.pdp-image-tag-right {
+  @apply absolute top-4 right-4 z-10 hidden sm:block;
+}
+.glass-subtle {
+  @apply px-3 py-1.5 rounded-md text-[10px] md:text-xs font-bold bg-white/50 backdrop-blur-md text-gray-700 border border-white/30 flex items-center gap-2;
+}
+
+.pdp-main-image {
+  @apply w-full h-full object-cover mix-blend-multiply;
+}
+
+.pdp-image-overlay {
+  @apply absolute bottom-4 left-4 right-4 rounded-[1rem] p-4 flex items-center justify-between;
+  @apply bg-white/70 backdrop-blur-xl border border-white/80 shadow-sm;
+}
+.pdp-overlay-left {
+  @apply flex items-center gap-3;
+}
+
+/* Thumbnails */
+.pdp-thumbnails {
+  @apply grid grid-cols-4 gap-2 sm:gap-4 mb-8;
+}
+.pdp-thumb-card {
+  @apply flex flex-col items-center justify-center p-2 rounded-xl border border-gray-200 bg-white cursor-pointer transition-all h-28 sm:h-32 shadow-[0_2px_10px_rgba(0,0,0,0.02)];
+  @apply hover:border-gray-400;
+}
+.pdp-thumb-card.active {
+  @apply border-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.05)];
+}
+.pdp-thumb-icon {
+  @apply flex items-center justify-center w-10 h-10 rounded-lg bg-gray-50 mb-2 text-gray-800;
+}
+
+/* Specs Table */
+.pdp-specs-table {
+  @apply w-full border-t border-gray-100 pt-8;
+}
+.pdp-specs-header {
+  @apply flex justify-between items-center mb-6;
+}
+.pdp-specs-grid {
+  @apply grid grid-cols-2 sm:grid-cols-4 gap-6;
+}
+.pdp-spec-item {
+  @apply flex flex-col gap-1.5;
+}
+.pdp-spec-label {
+  @apply text-[10px] font-bold text-gray-500 uppercase tracking-widest;
+}
+.pdp-spec-value {
+  @apply text-sm md:text-base font-semibold text-gray-900;
+}
+
+/* Details Col */
+.pdp-details-col {
+  @apply flex flex-col pt-0 lg:pt-4;
+}
+.pdp-rating {
+  @apply flex items-center text-xs sm:text-sm mb-4;
+}
+.pdp-title {
+  @apply text-[1.5rem] md:text-[2rem] leading-tight font-extrabold text-gray-900 mb-4 tracking-tight;
+}
+.pdp-desc {
+  @apply text-gray-600 text-sm md:text-base leading-relaxed mb-8;
+}
+
+.pdp-price-box {
+  @apply w-full p-6 rounded-[1.5rem] bg-[#FAFAFA] border border-gray-100/80 shadow-[0_2px_20px_rgba(0,0,0,0.02)] mb-8;
+}
+
+/* Options */
+.pdp-options {
+  @apply flex flex-col gap-8 mb-10;
+}
+.pdp-option-group {
+  @apply flex flex-col gap-4;
+}
+.pdp-option-header {
+  @apply flex justify-between items-end;
+}
+.pdp-option-cards {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3;
+}
+.pdp-option-card {
+  @apply flex items-center gap-4 p-4 rounded-xl border-2 border-transparent bg-white shadow-sm cursor-pointer border border-gray-200 transition-all;
+}
+.pdp-option-card.active {
+  @apply border-blue-400 bg-blue-50/20 shadow-md;
+}
+
+.pdp-option-radios {
+  @apply flex flex-col gap-3;
+}
+.pdp-radio-card {
+  @apply flex items-start gap-4 p-5 rounded-xl border border-gray-200 bg-white shadow-sm cursor-pointer transition-all;
+}
+.pdp-radio-card.active {
+  @apply border-blue-400 bg-blue-50/30 shadow-md;
+}
+.pdp-radio-indicator {
+  @apply flex items-center justify-center w-[18px] h-[18px] rounded-full border-2 border-gray-300 mt-1 flex-shrink-0 bg-white;
+}
+.pdp-radio-card.active .pdp-radio-indicator {
+  @apply border-blue-500;
+}
+.pdp-radio-indicator .inner {
+  @apply w-2.5 h-2.5 rounded-full bg-blue-500 opacity-0 transition-opacity;
+}
+.pdp-radio-card.active .pdp-radio-indicator .inner {
+  @apply opacity-100;
+}
+
+.pdp-whats-included {
+  @apply border-t border-gray-100 pt-8;
+}

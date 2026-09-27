@@ -1,0 +1,64 @@
+@reference "tailwindcss";
+
+/* 
+==============================================
+   FOOTER (PIE DE PÁGINA)
+============================================== 
+*/
+
+.footer-section {
+  @apply w-full bg-[#0a0a0a] pt-20 pb-10 border-t border-white/5;
+}
+
+.footer-container {
+  @apply max-w-7xl mx-auto px-6 lg:px-12;
+}
+
+/* --- CUADRÍCULA PRINCIPAL --- */
+.footer-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-8 mb-20;
+}
+
+/* --- COLUMNA 1: MARCA --- */
+.footer-brand-col {
+  @apply flex flex-col gap-6 max-w-sm;
+}
+
+.footer-logo {
+  @apply flex items-center gap-3 cursor-pointer;
+}
+
+.footer-logo-icon {
+  @apply flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5)];
+}
+
+.footer-desc {
+  @apply text-gray-400 text-sm leading-relaxed font-medium;
+}
+
+/* --- COLUMNAS 2 Y 3: ENLACES --- */
+.footer-nav-col, .footer-social-col {
+  @apply flex flex-col gap-6;
+}
+
+.footer-title {
+  @apply text-white text-xs font-bold tracking-[0.15em] uppercase;
+}
+
+.footer-links {
+  @apply flex flex-col gap-3.5;
+}
+
+.footer-link {
+  @apply inline-flex items-center text-gray-400 text-sm font-medium transition-all duration-300 w-fit hover:text-cyan-400 hover:translate-x-1;
+}
+
+/* --- BARRA INFERIOR --- */
+.footer-bottom {
+  @apply flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10;
+  @apply text-xs text-gray-500 font-medium;
+}
+
+.footer-bottom-tagline {
+  @apply text-gray-600;
+}

@@ -1,0 +1,154 @@
+@reference "tailwindcss";
+
+/* 
+==============================================
+   SECCIÓN DE TIENDA (SHOP)
+============================================== 
+*/
+
+.shop-section {
+  @apply relative w-full py-24 bg-white;
+}
+
+.shop-container {
+  @apply max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* --- ENCABEZADO --- */
+.shop-header {
+  @apply flex flex-col items-center text-center mb-12;
+}
+
+.shop-pill {
+  @apply text-cyan-500 text-xs font-extrabold tracking-[0.15em] uppercase mb-3;
+}
+
+.shop-title {
+  @apply text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-gray-900 tracking-tight mb-4 leading-tight;
+}
+
+.shop-subtitle {
+  @apply text-gray-500 text-base md:text-lg max-w-xl font-medium;
+}
+
+/* --- TARJETA PRINCIPAL --- */
+.shop-card {
+  @apply w-full bg-white rounded-[2rem] p-6 lg:p-10;
+  @apply shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100;
+}
+
+.shop-grid {
+  @apply grid lg:grid-cols-2 gap-10 lg:gap-16 items-start;
+}
+
+/* --- COLUMNA DE IMAGEN --- */
+.shop-image-column {
+  @apply flex flex-col gap-6;
+}
+
+.shop-image-wrapper {
+  @apply relative w-full aspect-square rounded-[1.5rem] overflow-hidden bg-white;
+  @apply border border-gray-100 shadow-sm p-2;
+}
+
+.shop-badge-launch {
+  @apply absolute top-6 left-6 z-10 px-3 py-1.5 rounded-lg;
+  @apply bg-gray-950 text-cyan-400 text-xs font-bold tracking-wider;
+}
+
+.shop-image {
+  @apply w-full h-full object-cover rounded-[1.25rem] hover:scale-105 transition-transform duration-500;
+}
+
+.shop-image-meta {
+  @apply flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs sm:text-sm px-2;
+}
+
+.shop-color-info {
+  @apply font-bold text-gray-900;
+}
+
+.shop-stock-info {
+  @apply flex items-center gap-2 font-bold text-emerald-600;
+}
+
+.shop-stock-dot {
+  @apply w-2 h-2 rounded-full bg-emerald-500;
+  animation: pulse-subtle 2s infinite;
+}
+
+/* --- COLUMNA DE DETALLES --- */
+.shop-details-column {
+  @apply flex flex-col py-4;
+}
+
+.shop-product-title {
+  @apply text-2xl lg:text-[2rem] font-bold text-gray-900 mb-3 leading-tight;
+}
+
+.shop-product-desc {
+  @apply text-gray-500 text-sm md:text-base mb-8;
+}
+
+/* Precio */
+.shop-price-container {
+  @apply flex flex-wrap items-end gap-3 lg:gap-4 mb-8;
+}
+
+.shop-price-current {
+  @apply text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-none;
+}
+
+.shop-price-old {
+  @apply text-xl lg:text-2xl text-gray-400 line-through font-medium pb-0.5;
+}
+
+.shop-price-saving {
+  @apply px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-bold mb-1.5 ml-2;
+}
+
+/* Selector de Cantidad */
+.shop-quantity-section {
+  @apply mb-8;
+}
+
+.shop-quantity-label {
+  @apply block text-[10px] font-bold text-gray-500 tracking-widest mb-3;
+}
+
+.shop-quantity-controls {
+  @apply inline-flex items-center bg-white border border-gray-200 rounded-full h-12 w-32;
+}
+
+.shop-quantity-btn {
+  @apply flex-1 flex items-center justify-center h-full text-gray-400 hover:text-gray-900 transition-colors rounded-full cursor-pointer;
+}
+
+.shop-quantity-value {
+  @apply font-bold text-gray-900 w-8 text-center text-sm;
+}
+
+/* Botón Agregar */
+.shop-add-btn {
+  @apply flex items-center justify-center gap-2.5 w-full bg-gray-950 text-white rounded-[1rem] h-[3.5rem] mb-6;
+  @apply shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:bg-gray-900 hover:-translate-y-0.5 transition-all duration-300;
+}
+
+/* Beneficios */
+.shop-benefits {
+  @apply flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 text-[13px] text-gray-500 font-medium;
+}
+
+.shop-benefit-item {
+  @apply flex items-center gap-2;
+}
+
+/* Alerta de Envío */
+.shop-shipping-alert {
+  @apply flex items-start gap-3 p-4 rounded-xl bg-[#F0FBFC] border border-cyan-100/50;
+  @apply text-xs text-cyan-800 leading-relaxed;
+}
+
+.shop-shipping-alert strong {
+  @apply text-cyan-900 font-bold;
+}

@@ -1,0 +1,87 @@
+@reference "tailwindcss";
+
+/* 
+  ========================================
+  NAVBAR STYLES
+  ========================================
+*/
+
+/* Contenedor principal de la barra de navegación */
+.navbar {
+  @apply w-full h-[80px] sticky top-0 z-50;
+  @apply bg-white/70 backdrop-blur-xl;
+  @apply border-b border-gray-200/50;
+}
+
+/* Espaciado interior */
+.navbar-container {
+  @apply w-full h-full px-6 lg:px-12;
+}
+
+/* Distribución de los elementos (Logo, Enlaces, Botones) */
+.navbar-content {
+  @apply flex justify-between items-center h-full;
+}
+
+/* --- LOGO --- */
+.navbar-logo-container {
+  @apply flex items-center cursor-pointer h-full py-2;
+}
+
+.navbar-logo {
+  @apply h-full object-contain mix-blend-multiply transition-transform duration-300;
+}
+
+/* Efecto al pasar el mouse sobre el logo */
+.navbar-logo-container:hover .navbar-logo {
+  @apply scale-105;
+}
+
+/* --- ENLACES --- */
+.navbar-links {
+  @apply hidden md:flex items-center gap-10;
+}
+
+.navbar-link {
+  @apply text-[15px] font-semibold text-gray-500 transition-colors duration-200;
+}
+
+.navbar-link:hover {
+  @apply text-gray-950;
+}
+
+.navbar-link-active {
+  @apply text-[15px] font-semibold text-gray-950;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+.navbar-actions {
+  @apply flex items-center gap-4;
+}
+
+/* Botón de búsqueda */
+.navbar-search {
+  @apply w-10 h-10 flex items-center justify-center rounded-full;
+  @apply text-gray-600 transition-colors duration-200;
+}
+
+.navbar-search:hover {
+  @apply text-gray-950 bg-gray-100;
+}
+
+/* Botón del carrito */
+.navbar-cart {
+  @apply flex items-center gap-2.5 ml-2 px-5 py-2.5 rounded-full;
+  @apply bg-gray-950 text-white transition-all duration-300;
+  @apply shadow-[0_4px_14px_0_rgb(0,0,0,0.2)];
+}
+
+.navbar-cart:hover {
+  @apply bg-gray-800 shadow-[0_6px_20px_rgba(0,0,0,0.23)] -translate-y-0.5;
+}
+
+/* Etiqueta flotante del carrito (el número 0) */
+.navbar-cart-badge {
+  @apply flex items-center justify-center w-5 h-5 rounded-full;
+  @apply bg-cyan-500 text-white text-xs font-bold;
+}

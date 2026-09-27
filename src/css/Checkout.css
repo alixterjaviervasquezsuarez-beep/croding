@@ -1,0 +1,76 @@
+@reference "tailwindcss";
+
+/* 
+==============================================
+   CHECKOUT PAGE (SIMULACIÓN DE COMPRA)
+============================================== 
+*/
+
+.checkout-success-container {
+  @apply min-h-[80vh] flex flex-col items-center justify-center mt-[80px] bg-white px-4;
+}
+
+.checkout-container {
+  @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10 mt-[80px] bg-white min-h-screen;
+}
+
+.checkout-header {
+  @apply flex flex-col sm:flex-row sm:justify-between sm:items-end mb-10 border-b border-gray-100 pb-6;
+}
+
+.checkout-grid {
+  @apply grid lg:grid-cols-[1.3fr_1fr] gap-12 items-start;
+}
+
+/* Formularios */
+.checkout-form-col {
+  @apply w-full;
+}
+
+.checkout-section {
+  @apply flex flex-col gap-5;
+}
+
+.checkout-section-title {
+  @apply flex items-center gap-3 font-extrabold text-xl text-gray-900 mb-2;
+}
+
+.checkout-input-grid {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.checkout-input {
+  @apply w-full h-14 px-4 rounded-xl border border-gray-200 bg-gray-50/50 text-gray-900 font-semibold transition-all;
+  @apply placeholder-gray-400;
+  @apply focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-500/10 outline-none;
+}
+
+.checkout-submit-btn {
+  @apply flex items-center justify-center gap-3 w-full bg-emerald-600 text-white rounded-[1rem] h-[4rem] mt-10 font-extrabold text-lg shadow-[0_8px_30px_rgba(5,150,105,0.2)];
+  @apply hover:bg-emerald-700 hover:shadow-[0_8px_30px_rgba(5,150,105,0.3)] hover:-translate-y-0.5 transition-all duration-300;
+}
+
+/* Resumen (Carrito) */
+.checkout-summary-col {
+  @apply w-full;
+}
+
+.checkout-summary-box {
+  @apply w-full bg-[#FAFAFA] rounded-[1.5rem] p-6 lg:p-8 border border-gray-200 shadow-sm sticky top-[120px];
+}
+
+.checkout-item {
+  @apply flex items-start gap-4 mb-6 pb-6 border-b border-gray-200;
+}
+
+.checkout-totals {
+  @apply flex flex-col gap-4;
+}
+
+.checkout-totals-row {
+  @apply flex justify-between items-center text-sm;
+}
+
+.checkout-totals-divider {
+  @apply w-full h-px bg-gray-200 my-2;
+}
