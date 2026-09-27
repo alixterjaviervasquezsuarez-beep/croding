@@ -98,7 +98,7 @@ input { font-family: inherit; }
    ============================================== */
 .hero {
   position: relative; width: 100%; display: flex; align-items: center; overflow: hidden;
-  height: calc(100vh - 80px); min-height: 600px; background: #FAFAFA;
+  min-height: calc(100vh - 80px); padding: 4rem 0; background: #FAFAFA;
 }
 .hero-bg-cyan {
   position: absolute; top: 25%; left: 0; width: 24rem; height: 24rem; border-radius: 9999px;
