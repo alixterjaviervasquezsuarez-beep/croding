@@ -1,0 +1,53 @@
+{%- comment -%} Header Section — converted from Navbar.jsx {%- endcomment -%}
+
+<nav class="navbar" id="site-header">
+  <div class="navbar-container">
+    <div class="navbar-content">
+      {%- comment -%} Logo {%- endcomment -%}
+      <a href="/" class="navbar-logo-container" aria-label="{{ shop.name }}">
+        <img
+          src="{{ 'smartclothes.jpeg' | asset_url }}"
+          alt="{{ shop.name }}"
+          class="navbar-logo"
+          width="160"
+          height="60"
+          loading="eager"
+        >
+      </a>
+
+      {%- comment -%} Navigation Links {%- endcomment -%}
+      <div class="navbar-links" id="nav-links">
+        <a href="/" class="navbar-link-active">{{ 'general.home' | t }}</a>
+        <a href="/#tecnologia" class="navbar-link">{{ 'general.technology' | t }}</a>
+        <a href="/#como-funciona" class="navbar-link">{{ 'general.how_it_works' | t }}</a>
+        <a href="/#caracteristicas" class="navbar-link">{{ 'general.features' | t }}</a>
+        <a href="/#comprar" class="navbar-link">{{ 'general.buy' | t }}</a>
+      </div>
+
+      {%- comment -%} Actions {%- endcomment -%}
+      <div class="navbar-actions">
+        <button class="navbar-search" aria-label="{{ 'general.search' | t }}">
+          {% render 'icon', name: 'search' %}
+        </button>
+
+        <button class="navbar-cart" id="cart-toggle" aria-label="{{ 'general.cart' | t }}">
+          {% render 'icon', name: 'shopping-bag' %}
+          <span class="navbar-cart-text">{{ 'general.cart' | t }}</span>
+          <div class="navbar-cart-badge" id="cart-count">{{ cart.item_count }}</div>
+        </button>
+
+        <button class="navbar-mobile-toggle" id="mobile-menu-toggle" aria-label="Menu">
+          {% render 'icon', name: 'menu' %}
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "header-section",
+  "settings": []
+}
+{% endschema %}

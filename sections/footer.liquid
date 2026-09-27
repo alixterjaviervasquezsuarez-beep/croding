@@ -1,0 +1,63 @@
+{%- comment -%} Footer Section — converted from Footer.jsx {%- endcomment -%}
+
+<footer class="footer-section">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+      {%- comment -%} Brand Column {%- endcomment -%}
+      <div class="footer-brand-col">
+        <a href="/" class="footer-logo" aria-label="{{ shop.name }}">
+          <div class="footer-logo-icon">{% render 'icon', name: 'sparkles' %}</div>
+          <span class="footer-logo-text">SMART<span>CLOTHES</span></span>
+        </a>
+        <p class="footer-desc">{{ 'footer.description' | t }}</p>
+      </div>
+
+      {%- comment -%} Navigation Column {%- endcomment -%}
+      <div class="footer-nav-col">
+        <h4 class="footer-title">{{ 'footer.navigation' | t }}</h4>
+        <ul class="footer-links">
+          <li><a href="/#producto" class="footer-link">{{ 'footer.product' | t }}</a></li>
+          <li><a href="/#tecnologia" class="footer-link">{{ 'general.technology' | t }}</a></li>
+          <li><a href="/#como-funciona" class="footer-link">{{ 'footer.how_it_works' | t }}</a></li>
+          <li><a href="/#soporte" class="footer-link">{{ 'footer.support' | t }}</a></li>
+          <li><a href="/policies/terms-of-service" class="footer-link">{{ 'footer.terms' | t }}</a></li>
+          <li><a href="/policies/privacy-policy" class="footer-link">{{ 'footer.privacy' | t }}</a></li>
+        </ul>
+      </div>
+
+      {%- comment -%} Social Column {%- endcomment -%}
+      <div class="footer-social-col">
+        <h4 class="footer-title">{{ 'footer.connect' | t }}</h4>
+        <ul class="footer-links">
+          {% if settings.social_instagram != blank %}
+            <li><a href="{{ settings.social_instagram }}" target="_blank" rel="noreferrer noopener" class="footer-link">Instagram</a></li>
+          {% endif %}
+          {% if settings.social_facebook != blank %}
+            <li><a href="{{ settings.social_facebook }}" target="_blank" rel="noreferrer noopener" class="footer-link">Facebook</a></li>
+          {% endif %}
+          {% if settings.social_tiktok != blank %}
+            <li>
+              <a href="{{ settings.social_tiktok }}" target="_blank" rel="noreferrer noopener" class="footer-link">
+                {% render 'icon', name: 'video' %} TikTok
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'footer.rights' | t }}</p>
+      <p class="footer-bottom-tagline">{{ 'footer.tagline' | t }}</p>
+    </div>
+
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

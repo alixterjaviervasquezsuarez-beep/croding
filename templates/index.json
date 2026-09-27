@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "technology": {
+      "type": "technology",
+      "settings": {}
+    },
+    "product-purchase": {
+      "type": "product-purchase",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "technology", "product-purchase"]
+}

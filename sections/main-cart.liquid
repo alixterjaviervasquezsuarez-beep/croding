@@ -1,0 +1,52 @@
+{%- comment -%} Main Cart Page — fallback for /cart {%- endcomment -%}
+
+<div class="cart-page">
+  <h1 class="cart-page-title">{{ 'general.cart' | t }}</h1>
+
+  {% if cart.item_count == 0 %}
+    <div class="cart-page-empty">
+      {% render 'icon', name: 'shopping-bag' %}
+      <h2>{{ 'general.your_cart_empty' | t }}</h2>
+      <p>{{ 'general.cart_empty_desc' | t }}</p>
+      <a href="/">{{ 'general.return_to_store' | t }}</a>
+    </div>
+  {% else %}
+    {% for item in cart.items %}
+      <div class="cart-item" data-line-item data-line="{{ forloop.index }}" data-variant-id="{{ item.variant_id }}">
+        <img class="cart-item-image" src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title }}" loading="lazy">
+        <div class="cart-item-info">
+          <div class="cart-item-title"><a href="{{ item.url }}">{{ item.product.title }}</a></div>
+          <div class="cart-item-variant">{{ item.variant.title }}</div>
+          <div class="cart-item-price">{{ item.final_line_price | money }}</div>
+          <div class="cart-item-actions">
+            <div class="cart-item-qty">
+              <button data-line-minus aria-label="Decrease">{% render 'icon', name: 'minus' %}</button>
+              <span data-line-qty>{{ item.quantity }}</span>
+              <button data-line-plus aria-label="Increase">{% render 'icon', name: 'plus' %}</button>
+            </div>
+            <button class="cart-item-remove" data-line-remove aria-label="Remove">
+              {% render 'icon', name: 'trash' %}
+            </button>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div style="border-top:1px solid #e5e7eb;padding-top:1.5rem;margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-weight:600;color:#6b7280;">{{ 'general.subtotal' | t }}</span>
+      <span style="font-weight:800;font-size:1.25rem;color:#111827;" id="page-cart-total">{{ cart.total_price | money }}</span>
+    </div>
+    <a href="/checkout" class="cart-drawer-checkout-btn" style="margin-top:1rem;">
+      {% render 'icon', name: 'shield-check' %}
+      {{ 'general.proceed_checkout' | t }}
+    </a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Main Cart",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

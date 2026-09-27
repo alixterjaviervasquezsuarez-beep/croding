@@ -1,0 +1,120 @@
+{%- comment -%} Hero Section — converted from Hero.jsx {%- endcomment -%}
+
+<div class="hero">
+  <div class="hero-bg-cyan"></div>
+  <div class="hero-bg-blue"></div>
+
+  <div class="hero-container">
+    <div class="hero-grid">
+
+      {%- comment -%} Text Content {%- endcomment -%}
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span class="hero-pill-icon">{% render 'icon', name: 'sparkles' %}</span>
+          <span class="hero-pill-text">{{ section.settings.pill_text | default: 'hero.pill' | t }}</span>
+        </div>
+
+        <h1 class="hero-title">
+          {{ section.settings.heading_line1 | default: 'hero.heading_line1' | t }}<br>
+          <span class="hero-title-highlight">{{ section.settings.heading_line2 | default: 'hero.heading_line2' | t }}</span>
+        </h1>
+
+        <p class="hero-description">
+          {{ section.settings.description | default: 'hero.description' | t }}
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#comprar" class="hero-btn-primary">
+            {{ section.settings.cta_primary | default: 'hero.cta_primary' | t }}
+            {% render 'icon', name: 'arrow-right' %}
+          </a>
+          <a href="#tecnologia" class="hero-btn-secondary">
+            <div class="hero-play-icon">
+              {% render 'icon', name: 'play' %}
+            </div>
+            {{ section.settings.cta_secondary | default: 'hero.cta_secondary' | t }}
+          </a>
+        </div>
+
+        <div class="hero-trust-badges">
+          <div class="hero-trust-badge">
+            <div class="hero-trust-icon">{% render 'icon', name: 'shield-check' %}</div>
+            <span class="hero-trust-text">{{ 'hero.trust_warranty' | t }}</span>
+          </div>
+          <div class="hero-trust-badge">
+            <div class="hero-trust-icon">{% render 'icon', name: 'truck' %}</div>
+            <span class="hero-trust-text">{{ 'hero.trust_shipping' | t }}</span>
+          </div>
+        </div>
+      </div>
+
+      {%- comment -%} Image & Floating Badges {%- endcomment -%}
+      <div class="hero-image-wrapper">
+        <div class="hero-image-container">
+          {% if section.settings.image %}
+            <img
+              src="{{ section.settings.image | image_url: width: 800 }}"
+              alt="{{ section.settings.image.alt | default: shop.name }}"
+              class="hero-image"
+              width="800"
+              height="1000"
+              loading="eager"
+            >
+          {% else %}
+            <img
+              src="{{ 'producto.jpeg' | asset_url }}"
+              alt="SmartClothes"
+              class="hero-image"
+              width="800"
+              height="1000"
+              loading="eager"
+            >
+          {% endif %}
+
+          {%- comment -%} Floating Badge 1 {%- endcomment -%}
+          <div class="hero-floating-badge hero-badge-1">
+            <div class="hero-badge-icon-dark">2</div>
+            <div>
+              <div class="hero-badge-text-title">{{ 'hero.badge_compartments' | t }}</div>
+              <div class="hero-badge-text-desc">{{ 'hero.badge_compartments_desc' | t }}</div>
+            </div>
+          </div>
+
+          {%- comment -%} Floating Badge 2 {%- endcomment -%}
+          <div class="hero-floating-badge hero-badge-2" style="animation-delay: 1.2s;">
+            <div class="hero-badge-icon-cyan">{% render 'icon', name: 'cpu' %}</div>
+            <div>
+              <div class="hero-badge-text-title">{{ 'hero.badge_ai' | t }}</div>
+              <div class="hero-badge-text-desc">{{ 'hero.badge_ai_desc' | t }}</div>
+            </div>
+          </div>
+
+          {%- comment -%} Floating Badge 3 {%- endcomment -%}
+          <div class="hero-floating-badge hero-badge-3" style="animation-delay: 0.6s;">
+            <div class="hero-badge-icon-amber">{% render 'icon', name: 'badge-check' %}</div>
+            <div>
+              <div class="hero-badge-text-title">{{ 'hero.badge_premium' | t }}</div>
+              <div class="hero-badge-text-desc">{{ 'hero.badge_premium_desc' | t }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "pill_text", "label": "Pill text" },
+    { "type": "text", "id": "heading_line1", "label": "Heading line 1" },
+    { "type": "text", "id": "heading_line2", "label": "Heading line 2 (highlighted)" },
+    { "type": "textarea", "id": "description", "label": "Description" },
+    { "type": "text", "id": "cta_primary", "label": "Primary button text" },
+    { "type": "text", "id": "cta_secondary", "label": "Secondary button text" },
+    { "type": "image_picker", "id": "image", "label": "Hero image" }
+  ]
+}
+{% endschema %}
